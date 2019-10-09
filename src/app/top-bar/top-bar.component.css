@@ -1,0 +1,15 @@
+.activelink:hover::after {
+  width: 100%;
+}
+
+.activelink::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 18px;
+  background: #FFF;
+  border-radius: 10px;
+  transition: width .3s;
+  position: relative;
+  top: 5px;
+}

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-translate">
+      <a class="navbar-brand" href="index.html" rel="tooltip" data-placement="bottom">
+        <img src="../../assets/img/logo-komunal-white.png" alt="Komunal" style="width:100px">
+        <span id="vr" style="border-left:1px solid #fff; margin-left: 15px; margin-right: 15px"></span>
+        <img id="img-vr" src="./assets/img/logo_ojk_afpi_v2.png" alt="Komunal"
+             style="width:280px; margin-top: -10px;">
+      </a>
+      <div class="col-sm text-right">
+                    <span id="tkb-resp" class="pulse" data-toggle="modal" data-target="#modaltkb"
+                          style="font-weight: 600">TKB: 100%
+                    </span>
+      </div>
+      <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#modaltkb" class="nav-link" id="tkb" data-toggle="modal" data-target="#modaltkb"
+             style="opacity: 10; ;color: #98B825;font-weight: 600"
+             [popper]="'Tingkat Keberhasilan 90 atau disingkat TKB90 merupakan tingkat keberhasilan penyelenggara P2P Lending dalam memfasilitasi penyelesaian kewajiban pinjam meminjam antara peminjam kepada pemberi dana dalam jangka waktu sampai dengan 90 hari sejak jatuh tempo.'">TKB: 100%
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/']" [routerLinkActive]="['activelink']" [routerLinkActiveOptions]="{exact: true}" class="nav-link nav-effect">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['pendanaan']" [routerLinkActive]="['activelink']" [routerLinkActiveOptions]="{exact: true}" class="nav-link nav-effect">Pendanaan</a>
+        </li>
+        <li class="nav-item">
+          <a href="./page/pinjaman.html" [routerLinkActive]="['activelink']" [routerLinkActiveOptions]="{exact: true}" class="nav-link nav-effect">Pinjaman</a>
+        </li>
+        <li class="nav-item">
+          <a href="./page/faq.html" [routerLinkActive]="['activelink']" class="nav-link nav-effect">FAQ</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Tentang Kami
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="./page/profil.html" [routerLinkActive]="['activelink']" >Profil</a>
+            <a class="dropdown-item" href="./page/hubungikami.html" [routerLinkActive]="['activelink']">Hubungi Kami</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4200" target="_blank" class="btn btn-primary btn-round"> <img
+            src="./assets/img/icon-49.png" alt="icon-user" width="25px"> Masuk</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
