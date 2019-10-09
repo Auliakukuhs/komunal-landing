@@ -1,13 +1,6 @@
 var transparent = true;
 var big_image;
 
-var transparentDemo = true;
-var fixedTop = false;
-
-var navbar_initialized,
-  backgroundOrange = false,
-  toggle_initialized = false;
-
 $(document).ready(function() {
   window_width = $(window).width();
   var big_image;
@@ -239,51 +232,6 @@ demo = {
     });
   }
 };
-
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-    var context = this,
-      args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    }, wait);
-    if (immediate && !timeout) func.apply(context, args);
-  };
-}
-
-function hasScrolled() {
-  var st = $(this).scrollTop();
-  // Make sure they scroll more than delta
-  if (Math.abs(lastScrollTop - st) <= delta)
-    return;
-
-  // If they scrolled down and are past the navbar, add class .nav-up.
-  // This is necessary so you never see what is "behind" the navbar.
-  if (st > lastScrollTop && st > navbarHeight) {
-    // Scroll Down
-    $('.navbar.nav-down').removeClass('nav-down').addClass('nav-up');
-  } else {
-    // Scroll Up
-    if (st + $(window).height() < $(document).height()) {
-      $('.navbar.nav-up').removeClass('nav-up').addClass('nav-down');
-    }
-  }
-
-  lastScrollTop = st;
-}
-
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
 
 function debounce(func, wait, immediate) {
   var timeout;
