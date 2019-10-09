@@ -1,5 +1,7 @@
 import {Component, AfterViewInit, OnInit} from '@angular/core';
+
 declare let $: any;
+
 @Component({
   selector: 'app-beranda',
   templateUrl: './beranda.component.html',

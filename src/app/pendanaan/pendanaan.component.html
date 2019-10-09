@@ -169,7 +169,7 @@
           <form id="simulasiPendanaan">
             <div class="form-group form-group-dana">
               <label class="label-dana" for="inputJumlah">Jumlah Pendanan</label>
-              <input type="text" name="jumlah" class="form-control form-dana" id="inputJumlah">
+              <input numbersOnly type="text" name="jumlah" class="form-control form-dana" id="inputJumlah">
               <label id="error-jumlah" class="error-sukubunga"></label>
             </div>
             <div class="form-row">
@@ -229,7 +229,7 @@
               </div>
             </div>
 
-            <a href="javascript:void(0)" class="btn-pendanaan" onclick="kalkulasi()"
+            <a href="javascript:void(0)" class="btn-pendanaan" (click)="kalkulasi()"
                style="font-weight:600">kalkulasi Pendanaan
             </a>
           </form>

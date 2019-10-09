@@ -22,10 +22,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { BerandaComponent } from './beranda/beranda.component';
 import { RouterModule } from '@angular/router';
 import { NgxPopperModule } from 'ngx-popper';
-import { PendanaanComponent } from './pendanaan/pendanaan.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutes } from './app-routing.module';
 
@@ -34,8 +32,6 @@ import { AppRoutes } from './app-routing.module';
     AppComponent,
     TopBarComponent,
     FooterComponent,
-    BerandaComponent,
-    PendanaanComponent
   ],
   imports: [
     BrowserModule,
@@ -59,9 +55,13 @@ import { AppRoutes } from './app-routing.module';
     TooltipModule.forRoot(),
     TypeaheadModule.forRoot(),
     NgxPopperModule.forRoot({trigger: 'hover'}),
-    RouterModule.forRoot(AppRoutes, { scrollPositionRestoration: 'enabled' }),
+    RouterModule.forRoot(AppRoutes, {scrollPositionRestoration: 'enabled'}),
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

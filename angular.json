@@ -32,7 +32,7 @@
               "src/assets/css/owl.theme.min.css"
             ],
             "scripts": [
-              "src/assets/js/core/jquery.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/core/popper.min.js",
               "src/assets/js/core/bootstrap.min.js",
               "src/assets/js/komunal.js",
