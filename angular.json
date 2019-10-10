@@ -34,7 +34,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/core/popper.min.js",
-              "src/assets/js/core/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/komunal.js",
               "node_modules/owl.carousel/dist/owl.carousel.min.js",
             ]
