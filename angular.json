@@ -27,16 +27,16 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "src/responsive.css",
-              "src/assets/css/animate.css",
-              "src/assets/css/owl.carousel.min.css",
-              "src/assets/css/owl.theme.min.css"
+              "node_modules/animate.css/animate.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/core/popper.min.js",
               "src/assets/js/core/bootstrap.min.js",
               "src/assets/js/komunal.js",
-              "src/assets/js/plugins/owl.carousel.js",
+              "node_modules/owl.carousel/dist/owl.carousel.min.js",
             ]
           },
           "configurations": {

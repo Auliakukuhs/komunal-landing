@@ -346,7 +346,7 @@
     <h2 class="title center-pills">Customer Stories</h2>
     <div class="row">
       <div class="col-md-12">
-        <div id="testimonial-slider" class="owl-carousel">
+        <div id="testimonial-slider" class="owl-carousel owl-theme">
           <div class="testimonial">
             <div class="testimonial-profile">
               <img src="assets/img/uji.png" alt="">
@@ -364,17 +364,6 @@
               menjadi
               lebih baik lagi.
             </p>
-          </div>
-          <div id="ujivid" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
-               aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div id="frameyt" class="modal-content">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qlzf7vH4Z44"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-              </div>
-            </div>
           </div>
           <div class="testimonial">
             <div class="testimonial-profile">
@@ -408,17 +397,6 @@
               butuhkan cair dalam 10 hari. Jika suatu hari saya ingin usaha baru lagi, Komunal
               bantu ya!
             </p>
-          </div>
-          <div id="inavid" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
-               aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div id="frameyt" class="modal-content">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5cMuh5AaTpo"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-              </div>
-            </div>
           </div>
           <div class="testimonial">
             <div class="testimonial-profile">
@@ -487,15 +465,25 @@
   </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $("#testimonial-slider").owlCarousel({
-            items: 3,
-            itemsDesktop: [1000, 2],
-            itemsDesktopSmall: [979, 2],
-            itemsTablet: [767, 1],
-            pagination: true,
-            autoPlay: false
-        });
-    });
-</script>
+<div id="ujivid" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div id="frameyt" class="modal-content">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qlzf7vH4Z44"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<div id="inavid" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div id="frameyt" class="modal-content">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/5cMuh5AaTpo"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
