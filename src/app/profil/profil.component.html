@@ -1,0 +1,82 @@
+<!--Intro Profil Komunal-->
+<div class="section info-profil" style="background: url('../assets/img/daniel-olahh.jpg'); background-position:center left;
+        background-attachment: fixed;">
+  <div class="filter"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center justify-content-center align-self-center" style="z-index: 5">
+        <h3>Siapapun Bisa Tumbuh. Bersama Kita Kembangkan
+          Potensi Komunitas Demi Indonesia Lebih Baik.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tentang Kami -->
+<div class="container">
+  <div class="row about-komunal">
+    <div class="col-md-4">
+      <h3>Tentang Komunal</h3>
+    </div>
+    <div class="col-md-8">
+      <p>Komunal merupakan perusahaan berbasis teknologi finansial yang memberikan layanan peer - to -
+        peer di Indonesia yang membantu menciptakan hubungan antara UMKM berpotensi dan para pemberi
+        dana untuk mendukung pertumbuhan perekonomian di Indonesia.</p>
+    </div>
+  </div>
+</div>
+
+<!--NgFor Test-->
+<div class="section lead">
+  <div class="container">
+    <div style="margin-bottom: 70px">
+      <h3>Tim Komunal</h3>
+    </div>
+    <div class="row row-tim" *ngFor="let profil of profiles; let odd=odd; let even=even;">
+      <div class="col-md-4 foto-tim" *ngIf="even">
+        <img [src]="'../../assets/img/'+profil.imagename+'.png'" [alt]="profil.imagename">
+      </div>
+      <div class="col-md-8 align-self-center" *ngIf="odd">
+        <h4 class="nama-tim">
+          {{profil.nama}}
+        </h4>
+        <h5 class="jabatan-tim">
+          {{profil.jabatan}}
+        </h5>
+        <p class="deskripsi-tim text-justify">
+          {{profil.deskripsi}}
+        </p>
+      </div>
+      <div class="col-md-8 align-self-center" *ngIf="even">
+        <h4 class="nama-tim">
+          {{profil.nama}}
+        </h4>
+        <h5 class="jabatan-tim">
+          {{profil.jabatan}}
+        </h5>
+        <p class="deskripsi-tim text-justify">
+          {{profil.deskripsi}}
+        </p>
+      </div>
+      <div class="col-md-4 order-first order-md-4 foto-tim" *ngIf="odd">
+        <img [src]="'../../assets/img/'+profil.imagename+'.png'" [alt]="profil.imagename">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Punya Pertanyaan?-->
+<div class="section section-responsive section-peminjaman" style="background-color: #193b6d;">
+  <div class="container">
+    <div class="row row-profil">
+      <div class="col-md-7">
+        <h3 style="color: white; font-size: 22px">Punya Pertanyaan Mengenai Komunal? <br> Tim Kami Siap
+          Membantu</h3>
+      </div>
+      <div class="col-md-5 text-center align-self-center btn-tanya">
+        <a routerLink="/faq"><button type="submit" class="btn btn-primary btn-round">Lihat Pertanyaan</button></a>
+        <a routerLink="/hubungikami"><button type="submit" class="btn btn-danger btn-round">Hubungi Kami</button></a>
+      </div>
+    </div>
+  </div>
+</div>

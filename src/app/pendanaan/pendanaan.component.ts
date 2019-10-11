@@ -34,16 +34,17 @@ export class PendanaanComponent implements OnInit {
             var $this = $(this);
 
             // Get the value.
-            var input = $this.val();
+            var inputan = $this.val();
 
-            var input = input.replace(/[\D\s\._\-]+/g, "");
-            if(input){
-              input = parseFloat(input);
+            var input = inputan.toString().replace(/[\D\s\._\-]+/g, "");
+            var inputnumber = parseFloat(input);
+            if(inputnumber){
+              inputnumber = inputnumber;
             }else{
-              input = 0;
+              inputnumber = 0;
             }
             $this.val(function () {
-              return (input === 0) ? "" : input.toLocaleString("de-DE");
+              return (inputnumber === 0) ? "" : inputnumber.toLocaleString("de-DE");
             });
           });
 
@@ -88,13 +89,18 @@ export class PendanaanComponent implements OnInit {
 
 
     // calculation
-    var jumlah_fix = parseInt(jumlah.replace(/\./g, ''));
+    var jumlahan = jumlah.toString();
+    var jumlah_fix = parseInt(jumlahan.replace(/\./g, ''));
 
-    var bunga_fix = (bunga / 12) * tenor;
+    var bungae = parseFloat(bunga.toString());
+    var tenore = parseFloat(tenor.toString());
+
+
+    var bunga_fix = (bungae / 12) * tenore;
     var getBunga = (bunga_fix / 100) * jumlah_fix;
 
     if (tipe_pembayaran == 'bulanan') {
-      var income = (jumlah_fix + getBunga) / tenor;
+      var income = (jumlah_fix + getBunga) / tenore;
     } else {
       var income = jumlah_fix + getBunga;
     }
@@ -111,35 +117,6 @@ export class PendanaanComponent implements OnInit {
     }else {
       $('#income').text('IDR ' + '0');
     }
-
-    // $bunga = $request['bunga'] / 12 * $request['tenor'];
-    // $getBunga = ($bunga / 100) * $jumlah;
-
-    // if ($request['tipe_pembayaran'] == 'bulanan') {
-    //     $income = ($jumlah + $getBunga) / $request['tenor'];
-    // } else if ($request['tipe_pembayaran'] == 'penuh') {
-    //     $income = $jumlah + $getBunga;
-    // }
-
-    // $('#income').text('IDR ' + );
-
-    // var post = $.post("/kalkulasiPendanaan", {
-    //     jumlah: jumlah,
-    //     bunga: bunga,
-    //     tenor: tenor,
-    //     tipe_pembayaran: tipe_pembayaran,
-    //     _token: '{{csrf_token()}}'
-    // }).done(function (data) {
-    //     response = jQuery.parseJSON(data);
-
-    // $('#income').text('IDR ' + );
-
-    //     if (response.tipe_pembayaran == 'bulanan') {
-    //         $('#judulKalkulasi').text('Perkiraan penerimaan per bulan:');
-    //     } else if (response.tipe_pembayaran == 'penuh') {
-    //         $('#judulKalkulasi').text('Perkiraan penerimaan akhir:');
-    //     }
-    // });
   }
 
 }

@@ -38,7 +38,7 @@
           <a [routerLink]="['pinjaman']" [routerLinkActive]="['activelink']" [routerLinkActiveOptions]="{exact: true}" class="nav-link nav-effect">Pinjaman</a>
         </li>
         <li class="nav-item">
-          <a href="./page/faq.html" [routerLinkActive]="['activelink']" class="nav-link nav-effect">FAQ</a>
+          <a [routerLink]="['faq']" [routerLinkActive]="['activelink']" class="nav-link nav-effect">FAQ</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -46,8 +46,8 @@
             Tentang Kami
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="./page/profil.html" [routerLinkActive]="['activelink']" >Profil</a>
-            <a class="dropdown-item" href="./page/hubungikami.html" [routerLinkActive]="['activelink']">Hubungi Kami</a>
+            <a class="dropdown-item" [routerLink]="['profil']">Profil</a>
+            <a class="dropdown-item" [routerLink]="['hubungikami']">Hubungi Kami</a>
           </div>
         </li>
         <li class="nav-item">

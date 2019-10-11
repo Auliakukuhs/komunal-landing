@@ -31,7 +31,7 @@ import { AppRoutes } from './app-routing.module';
   declarations: [
     AppComponent,
     TopBarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -30,16 +30,17 @@ export class PinjamanComponent implements OnInit {
             var $this = $(this);
 
             // Get the value.
-            var input = $this.val();
+            var inputan = $this.val();
 
-            var input = input.replace(/[\D\s\._\-]+/g, '');
-            if (input) {
-              input = parseFloat(input);
-            } else {
-              input = 0;
+            var input = inputan.toString().replace(/[\D\s\._\-]+/g, "");
+            var inputnumber = parseFloat(input);
+            if(inputnumber){
+              inputnumber = inputnumber;
+            }else{
+              inputnumber = 0;
             }
-            $this.val(function() {
-              return (input === 0) ? '' : input.toLocaleString('de-DE');
+            $this.val(function () {
+              return (inputnumber === 0) ? "" : inputnumber.toLocaleString("de-DE");
             });
           });
 
@@ -84,13 +85,18 @@ export class PinjamanComponent implements OnInit {
 
 
     // calculation
-    var jumlah_fix = parseInt(jumlah.replace(/\./g, ''));
+    var jumlahan = jumlah.toString();
+    var jumlah_fix = parseInt(jumlahan.replace(/\./g, ''));
 
-    var bunga_fix = (bunga / 12) * tenor;
+    var bungae = parseFloat(bunga.toString());
+    var tenore = parseFloat(tenor.toString());
+
+
+    var bunga_fix = (bungae / 12) * tenore;
     var getBunga = (bunga_fix / 100) * jumlah_fix;
 
     if (tipe_pembayaran == 'bulanan') {
-      var income = (jumlah_fix + getBunga) / tenor;
+      var income = (jumlah_fix + getBunga) / tenore;
     } else {
       var income = jumlah_fix + getBunga;
     }
