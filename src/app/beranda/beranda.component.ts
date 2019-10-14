@@ -1,27 +1,43 @@
 import {Component, AfterViewInit, OnInit} from '@angular/core';
-
 declare let $: any;
 
 @Component({
   selector: 'app-beranda',
   templateUrl: './beranda.component.html',
-  styleUrls: ['./beranda.component.css'],
+  styleUrls: ['./beranda.component.css']
 })
 export class BerandaComponent implements AfterViewInit, OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
+
   }
 
   ngAfterViewInit() {
     $("#testimonial-slider").owlCarousel({
-      items: 3,
-      itemsDesktop: [1000, 2],
-      itemsDesktopSmall: [979, 2],
-      itemsTablet: [767, 1],
       pagination: true,
-      autoPlay: false
+      autoPlay: false,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        767: {
+          items: 1
+        },
+        900: {
+          items: 2
+        },
+        1000: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        },
+      }
     });
   }
 

@@ -29,5 +29,13 @@ export const AppRoutes: Routes = [
   {
     path: 'hubungikami',
     loadChildren: './hubungikami/hubungikami.module#HubungikamiModule'
+  },
+  {
+    path: 'syarat',
+    loadChildren: './syaratketentuan/syaratketentuan.module#SyaratketentuanModule'
+  },
+  {
+    path: 'privasi',
+    loadChildren: './privasi/privasi.module#PrivasiModule'
   }
 ];
