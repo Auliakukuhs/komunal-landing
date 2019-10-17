@@ -13,3 +13,14 @@
   position: relative;
   top: 5px;
 }
+
+select.nav-link.dropdown-toggle.language-select {
+  background-color: #fff0;
+  border: none;
+  font-weight: 600;
+}
+
+option.list-language{
+  color: #0e274d;
+}
+

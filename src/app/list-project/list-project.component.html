@@ -1,99 +1,103 @@
-<p style="text-align: center">List-Peluang works</p>
-<!--<div class="card-score card-primary pendanaan" *ngIf="project.status === 3">-->
-<!--  <div class="card-content">-->
-<!--    <div class="row">-->
-<!--      <span class="price-nominal-white dana text-right pendanaan">-->
-<!--        {{project.jumlah_terkumpul / project.jumlah * 100}}% | IDR {{project.jumlah_terkumpul}}-->
-<!--      </span>-->
-<!--    </div>-->
-<!--    <div class="row-progress">-->
-<!--      <div class="progress">-->
-<!--        <div class="progress-bar pendanaan" role="progress-bar" [ngStyle]="{width: (project.jumlah_terkumpul/project.jumlah*100) + '%'}"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--      <div class="col-lg-4 align-self-center mb-10">-->
-<!--        <span class="price-label-white">{{project.project_uid}}</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white pendanaan">{{project.project_name}}</span></div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white">Jumlah Pinjaman</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white pendanaan">IDR {{project.jumlah}}</span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white">Rating &amp; Suku Bunga</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white pendanaan">{{project.credit_rating}}-->
-<!--          | {{project.persen_bunga_efektif_lender}}</span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white">Tenor</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white pendanaan">{{project.tenor}} Bulan | {{project.metode_pembayaran_name}}</span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white small">Status</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white small small">-->
-<!--          <li class="status-active pendanaan">{{project.status_name}}</li>-->
-<!--        </span>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--&lt;!&ndash;Terdanai&ndash;&gt;-->
-<!--<div class="card-score card-primary terdanai" *ngIf="project.status === 4" style="background-color: rgb(255, 255, 255);">-->
-<!--  <div class="card-content">-->
-<!--    <div class="row">-->
-<!--      <span class="price-nominal-white dana text-right terdanai" style="color: rgba(145, 145, 145, 0.59);">-->
-<!--        {{project.jumlah_terkumpul / project.jumlah * 100}}% | IDR {{project.jumlah_terkumpul}}-->
-<!--      </span>-->
-<!--    </div>-->
-<!--    <div class="row-progress">-->
-<!--      <div class="progress">-->
-<!--        <div class="progress-bar terdanai" role="progress-bar" style="width: 100%; border-radius: 0px; background-color: rgb(205, 205, 205);">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--      <div class="col-lg-4 align-self-center mb-10">-->
-<!--        <span class="price-label-white">{{project.project_uid}}</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">-->
-<!--          {{project.project_name}}-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white">Jumlah Pinjaman</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">-->
-<!--          IDR {{project.jumlah}}-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white">Rating &amp; Suku Bunga</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">-->
-<!--          {{project.credit_rating}} | {{project.persen_bunga_efektif_lender}}%-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white">Tenor</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">-->
-<!--          {{project.tenor}} Bulan | {{project.metode_pembayaran_name}}-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="col-lg-2 align-self-center mb-10">-->
-<!--        <span class="price-label-white small">Status</span>-->
-<!--        <br>-->
-<!--        <span class="price-nominal-white small small">-->
-<!--          <li class="status-active terdanai" style="color: rgba(145, 145, 145, 0.59);">-->
-<!--            {{project.status_name}}-->
-<!--          </li>-->
-<!--        </span>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<!--Kosong-->
+<div class="text-center" *ngIf="total==0">
+  <p style="font-style: italic;">Mohon maaf, untuk saat ini peluang pendanaan belum tersedia. Nantikan peluang pendanaan yang menarik dari komunal</p>
+</div>
+<!--Pendanaan-->
+<div class="card-score card-primary pendanaan" *ngFor="let project of projects">
+  <div class="card-content">
+    <div class="row">
+      <span class="price-nominal-white dana text-right pendanaan">
+        {{project.jumlah_terkumpul / project.jumlah * 100 | number : '1.2-2'}}% | IDR {{project.jumlah_terkumpul | number}}
+      </span>
+    </div>
+    <div class="row-progress">
+      <div class="progress">
+        <div class="progress-bar pendanaan" role="progress-bar" [ngStyle]="{width: (project.jumlah_terkumpul/project.jumlah*100) + '%'}"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 align-self-center mb-10">
+        <span class="price-label-white">{{project.project_uid}}</span>
+        <br>
+        <span class="price-nominal-white pendanaan">{{project.project_name}}</span></div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white">Jumlah Pinjaman</span>
+        <br>
+        <span class="price-nominal-white pendanaan">IDR {{project.jumlah | number}}</span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white">Rating &amp; Suku Bunga</span>
+        <br>
+        <span class="price-nominal-white pendanaan">{{project.credit_rating}}
+          | {{project.persen_bunga_efektif_lender}}</span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white">Tenor</span>
+        <br>
+        <span class="price-nominal-white pendanaan">{{project.tenor}} Bulan | {{project.metode_pembayaran_name}}</span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white small">Status</span>
+        <br>
+        <span class="price-nominal-white small small">
+          <li class="status-active pendanaan">{{project.status_name}}</li>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Terdanai-->
+<div class="card-score card-primary terdanai" *ngFor="let fundedProject of fundedProjects" style="background-color: rgb(255, 255, 255);">
+  <div class="card-content">
+    <div class="row">
+      <span class="price-nominal-white dana text-right terdanai" style="color: rgba(145, 145, 145, 0.59);">
+        {{fundedProject.jumlah_terkumpul / fundedProject.jumlah * 100}}% | IDR {{fundedProject.jumlah_terkumpul | number}}
+      </span>
+    </div>
+    <div class="row-progress">
+      <div class="progress">
+        <div class="progress-bar terdanai" role="progress-bar" style="width: 100%; border-radius: 0px; background-color: rgb(205, 205, 205);">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 align-self-center mb-10">
+        <span class="price-label-white">{{fundedProject.project_uid}}</span>
+        <br>
+        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">
+          {{fundedProject.project_name}}
+        </span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white">Jumlah Pinjaman</span>
+        <br>
+        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">
+          IDR {{fundedProject.jumlah | number}}
+        </span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white">Rating &amp; Suku Bunga</span>
+        <br>
+        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">
+          {{fundedProject.credit_rating}} | {{fundedProject.persen_bunga_efektif_lender}}%
+        </span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white">Tenor</span>
+        <br>
+        <span class="price-nominal-white terdanai" style="color: rgba(145, 145, 145, 0.59);">
+          {{fundedProject.tenor}} Bulan | {{fundedProject.metode_pembayaran_name}}
+        </span>
+      </div>
+      <div class="col-lg-2 align-self-center mb-10">
+        <span class="price-label-white small">Status</span>
+        <br>
+        <span class="price-nominal-white small small">
+          <li class="status-active terdanai" style="color: rgba(145, 145, 145, 0.59);">
+            {{fundedProject.status_name}}
+          </li>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
