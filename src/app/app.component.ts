@@ -10,10 +10,10 @@ import {TranslateService} from "@ngx-translate/core";
 export class AppComponent {
   title = 'komunal-landingpage';
   constructor(public translate: TranslateService) {
-    translate.addLangs(['en', 'id']);
-    translate.setDefaultLang('id');
+    // this language will be used as a fallback when a translation isn't found in the current language
+    this.translate.setDefaultLang('id');
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|in/) ? browserLang : 'id');
+    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    this.translate.use('id');
   }
 }
